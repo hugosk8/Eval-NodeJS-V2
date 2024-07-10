@@ -1,6 +1,9 @@
-export const requireAuth = (req, res) => {
+const requireAuth = (req, res, next) => {
+    console.log('User not authenticated, redirecting to login');
     if (!req.session.userId) {
-        return res.redirect('/')
+        return res.redirect('/login')
     }
     next();
 }
+
+export default requireAuth;

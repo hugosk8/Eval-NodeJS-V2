@@ -25,7 +25,7 @@ server.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
-}))
+}));
 
 server.use('/', routes);
 
