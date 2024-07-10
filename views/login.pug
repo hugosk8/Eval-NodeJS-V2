@@ -1,0 +1,18 @@
+extends layouts/guest_layout
+
+block content
+    .text-center
+        h1= title
+        .row 
+            .col-md-6.offset-md-3 
+                form(action="/login" method="POST")
+                    .form-group.mb-2
+                        label(for="email") Adresse email
+                        input#email.form-control(type="email" name="email" required)
+                    .form-group.mb-2
+                        label(for="password") Mot de passe
+                        input#password.form-control(type="password" name="password" required)
+                    .form-group.mb-2
+                        a(href="/register") Pas encore de compte? Inscrivez vous
+                    .form-group.mb-2
+                        button.btn.btn-primary(type="submit") Se connecter
