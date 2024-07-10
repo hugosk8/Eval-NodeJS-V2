@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+    head
+        title= title
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css")
+        style.
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            main {
+                flex: 1;
+            }
+    body
+        header.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            .container-fluid
+                a.navbar-brand(href="/admin") Admin Dashboard
+                button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+                    span.navbar-toggler-icon
+                .collapse.navbar-collapse#navbarNav
+                    ul.navbar-nav.ms-auto
+                        li.nav-item
+                            a.nav-link.active(href="/admin") Accueil
+                        li.nav-item
+                            a.nav-link.active(href="/") Guest
+                        li.nav-item
+                            a.nav-link(href="/login") Connexion
+        main.my-5
+            .container
+            block content
+        footer.bg-dark.text-white.mt-auto.py-3
+            .container
+                .row
+                .col-md-6
+                    p.mb-0 &copy; 2024 Your Company
+                .col-md-6.text-md-end
+                    a.text-white.me-2(href="#") Privacy Policy
+                    a.text-white.me-2(href="#") Terms of Service
+                    a.text-white(href="#") Contact Us
+
