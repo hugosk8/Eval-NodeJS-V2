@@ -18,6 +18,8 @@ const __dirname = path.dirname(__filename);
 server.set('views', path.join(__dirname, 'views'));
 server.set('view engine', 'pug');
 
+server.use(express.static(path.join(__dirname, 'public')));
+
 server.use(bodyParser.urlencoded({ extended: true}));
 
 server.use(session({

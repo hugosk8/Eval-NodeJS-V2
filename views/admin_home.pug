@@ -1,5 +1,30 @@
 extends layouts/admin_layout
 
 block content
-    .text-center
+    .container.text-center
         h1= title
+        button.btn.btn-primary Ajouter un materiau
+        button.btn.btn-primary Ajouter un meuble
+        .row
+            h2 Liste de nos meubles
+            table.table.table-striped
+                thead
+                    tr 
+                        th Nom
+                        th Materiaux
+                        th Fournisseurs 
+                        th Date de création
+                tbody 
+                    each furniture in furnitures
+                        tr 
+                            td= furniture.name 
+                            td 
+                                ul 
+                                    each material in furniture.materials 
+                                        li
+                                            a(href="/materiaux/" + removeAccents(material.name))= material.name
+                            td 
+                                ul 
+                                    each material in furniture.materials 
+                                        li= material.company.name 
+                            td= furniture.CreationDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })

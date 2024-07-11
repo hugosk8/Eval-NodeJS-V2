@@ -1,0 +1,11 @@
+extends layouts/guest_layout
+
+block content
+    .container.text-center 
+        .row 
+            h1= title
+            ul
+                each material in materials
+                    li
+                        a(href=`/materiaux/${removeAccents(material.name)}`)= material.name
+                        p= material.description
