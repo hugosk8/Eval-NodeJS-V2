@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+const { Schema, model } = mongoose;
+
 const FurnituresSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -19,6 +21,6 @@ const FurnituresSchema = new mongoose.Schema({
     }
 })
 
-const Furniture = mongoose.model('Furniture', FurnituresSchema);
+const Furniture = mongoose.models.Furniture || model('Furniture', FurnituresSchema);
 
 export default Furniture;

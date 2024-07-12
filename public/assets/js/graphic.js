@@ -1,34 +1,21 @@
-import Furniture from '../models/FurnituresModel.js';
-const furnitures = Furniture.find();
-console.log(furnitures);
+document.addEventListener("DOMContentLoaded", () => {
+    const barCanvas = document.getElementById('barCanvas');
+    const names = materialData.map(item => item.name);
+    const quantities = materialData.map(item => item.quantity);
 
-const barCanvas = document.getElementById('barCanvas');
-
-const barChart = new Chart(barCanvas, {
-    type: "bar",
-    data: {
-        labels: [
-            "beijing",
-            "Tokyo",
-            "Seoul",
-            "Hong Kong"
-        ],
-        datasets: [{
-            data: [240, 120, 180, 300],
-            backgroundColor: [
-                "crimson",
-                "lightgreen",
-                "lightblue",
-                "violet"
-            ],
-            hoverOffset: 10
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                suggestedMax: 350
-            }
+    const barChart = new Chart(barCanvas, {
+        type: "bar",
+        data: {
+            labels: names,
+            datasets: [{
+                data: quantities,
+                backgroundColor: [
+                    "crimson",
+                    "lightgreen",
+                    "lightblue",
+                    "violet"
+                ]
+            }]
         }
-    }
+    });
 });
