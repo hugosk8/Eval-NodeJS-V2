@@ -4,6 +4,6 @@ import { renderStatisticsPage } from "../controllers/adminController.js";
 
 const router = Router();
 
-router.get('/statistiques', renderStatisticsPage)
+router.get('/statistiques', requireAuth, renderStatisticsPage)
 
 export default router;

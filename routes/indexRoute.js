@@ -13,6 +13,6 @@ router.use('/', authRoutes);
 router.use('/materiaux', materialsRoutes);
 router.use('/meubles', furnituresRoutes);
 router.use('/fournisseurs', companiesRoutes)
-router.use('/admin',adminRoutes );
+router.use('/admin', adminRoutes );
 
 export default router;

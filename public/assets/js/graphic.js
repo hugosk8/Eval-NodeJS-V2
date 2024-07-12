@@ -11,9 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 data: quantities,
                 backgroundColor: [
                     "crimson",
-                    "lightgreen",
+                    "darkgreen",
                     "lightblue",
-                    "violet"
+                    "violet",
+                    "bisque",
+                    "lightgreen",
+                    "darkblue"
                 ]
             }]
         }
