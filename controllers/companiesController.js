@@ -2,14 +2,13 @@ import Company from '../models/CompaniesModel.js';
 import Materials from '../models/MaterialsModel.js';
 
 export const addCompany = async (req, res) => {
-    const { name, type } = req.body;
+    const { name } = req.body;
     try {
         const newCompany = new Company({
-            name,
-            type
+            name
         });
         await newCompany.save();
-        res.status(201).json(newCompany);
+        res.status(201).redirect('/admin');
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
@@ -41,4 +40,8 @@ export const showCompanies = async (req, res) => {
         console.error(error);
         res.status(500).send('Erreur du serveur');
     }
+}
+
+export const renderAddCompanyPage = (req, res) => {
+    res.render('addCompany', { title: 'Ajouter un fournisseur' });
 }

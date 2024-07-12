@@ -19,5 +19,12 @@ block content
                         select.form-control(id="materials" name="materials" multiple required)
                             each material in materials
                                 option(value=material._id)= material.name
+                    //- .form-group.mb-2
+                    //-     label(for="quantity") Quantité du matériau :
+                    //-     input.form-control(type="number" name="quantity" placeholder="en gramme" required)
+                    .form-group.mb-2 
+                        #quantities-container
                     .form-group.mb-2
                         button.btn.btn-primary(type="submit") Ajouter
+
+    script(src="/assets/js/quantity.js")
