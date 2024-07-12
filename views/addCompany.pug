@@ -1,0 +1,23 @@
+extends layouts/admin_layout
+
+block content
+    .container.text-center
+        h1= title
+        .row 
+            .col-md-6.offset-md-3 
+                form(action="/fournisseurs/ajouter" method="POST")
+                    .form-group.mb-2
+                        label(for="name") Nom du meuble :
+                        input.form-control(type="text" name="name" required)
+                    .form-group.mb-2
+                        label(for="category") catégorie du meuble :
+                        select.form-control(name="category" required)
+                            option(value="Etagère") Etagère
+                            option(value="Armoire") Armoire
+                    .form-group.mb-2
+                        label(for="materials") Matériaux
+                        select.form-control(id="materials" name="materials" multiple required)
+                            each material in materials
+                                option(value=material._id)= material.name
+                    .form-group.mb-2
+                        button.btn.btn-primary(type="submit") Ajouter

@@ -3,8 +3,10 @@ extends layouts/admin_layout
 block content
     .container.text-center
         h1= title
-        button.btn.btn-primary Ajouter un materiau
-        button.btn.btn-primary Ajouter un meuble
+        button.addMaterial
+            a(href="/materiaux/ajouter").btn.btn-primary  Ajouter un materiau
+        button.addFurniture
+            a(href="/meubles/ajouter").btn.btn-primary  Ajouter un meuble
         .row
             h2 Liste de nos meubles
             table.table.table-striped

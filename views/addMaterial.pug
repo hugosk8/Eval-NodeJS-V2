@@ -1,0 +1,18 @@
+extends layouts/admin_layout
+
+block content
+    .container.text-center
+        h1= title
+        .row 
+            .col-md-6.offset-md-3 
+                form(action="/materiaux/ajouter" method="POST")
+                    .form-group.mb-2
+                        label(for="name") Nom du matériau :
+                        input.form-control(type="text" name="name" required)
+                    .form-group.mb-2
+                        label(for="company") Fournisseur :
+                        select.form-control(name="company" required)
+                            each company in companies
+                                option(value=company._id)= company.name 
+                    .form-group.mb-2
+                        button.btn.btn-primary(type="submit") Ajouter

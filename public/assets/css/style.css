@@ -2,6 +2,12 @@ ul {
     list-style: none;
 }
 
-button.btn.btn-primary {
+a {
+    text-decoration: none;
+}
+
+button.addMaterial, button.addFurniture {
     margin: 10px;
+    border: none;
+    background-color: transparent;
 }
